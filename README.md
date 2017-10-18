@@ -1,1 +1,1 @@
-# discourse-lugin-test
+# discourse-plugin-test

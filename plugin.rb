@@ -1,4 +1,11 @@
-# name: discourse-plugin-test
-# about: A super simple plugin to demonstrate how plugins work
-# version: 0.0.1
-# authors: Awesome Plugin Developer
+# name: purple-tentacle
+# about: A sample plugin showing how to add a plugin route
+# version: 0.1
+# authors: Robin Ward
+# url: https://github.com/discourse/purple-tentacle
+
+add_admin_route 'purple_tentacle.title', 'purple-tentacle'
+
+Discourse::Application.routes.append do
+  get '/admin/plugins/purple-tentacle' => 'admin/plugins#index', constraints: StaffConstraint.new
+end
